@@ -1,0 +1,27 @@
+<view class="container">
+  <view class="card">
+    <view class="field"><view class="label">设备</view>
+      <picker range="{{equipment}}" range-key="equipmentNo" value="{{equipmentIndex}}" bindchange="onEquipment"><view>{{equipmentIndex >= 0 ? equipment[equipmentIndex].equipmentNo + ' · ' + equipment[equipmentIndex].model : '未选择设备'}}</view></picker>
+    </view>
+    <view class="form-row">
+      <view class="field"><view class="label">类型</view><picker range="{{types}}" range-key="label" value="{{typeIndex}}" bindchange="onType"><view>{{types[typeIndex].label}}</view></picker></view>
+      <view class="field"><view class="label">优先级</view><picker range="{{priorities}}" range-key="label" value="{{priorityIndex}}" bindchange="onPriority"><view>{{priorities[priorityIndex].label}}</view></picker></view>
+    </view>
+    <view class="field"><view class="label">故障描述 *</view><textarea value="{{form.description}}" data-key="description" bindinput="onInput" placeholder="现象、报警代码、停机情况" /></view>
+    <view class="field"><view class="label">联系人</view><input value="{{form.contactName}}" data-key="contactName" bindinput="onInput" /></view>
+    <view class="field"><view class="label">现场照片（最多 6 张）</view>
+      <view class="photo-grid">
+        <view wx:for="{{photos}}" wx:key="*this" class="photo-item">
+          <image src="{{item}}" mode="aspectFill" data-index="{{index}}" bindtap="previewPhoto" />
+          <view class="photo-del" data-index="{{index}}" catchtap="removePhoto">×</view>
+        </view>
+        <view wx:if="{{photos.length < 6}}" class="photo-add" bindtap="choosePhotos">
+          <text class="photo-add-plus">{{uploading ? '…' : '＋'}}</text>
+          <text class="photo-add-label">{{uploading ? '上传中' : '照片'}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="notice blue">24 小时内同类未完结工单会提示合并，避免重复报修。</view>
+    <button class="btn btn-primary btn-block" loading="{{loading}}" bindtap="submit">提交报修</button>
+  </view>
+</view>

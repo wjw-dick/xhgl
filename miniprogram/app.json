@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/register/register",
+    "pages/index/index",
+    "pages/demand/list",
+    "pages/demand/form",
+    "pages/demand/detail",
+    "pages/consult/consult",
+    "pages/solution/list",
+    "pages/solution/detail",
+    "pages/quote/list",
+    "pages/quote/detail",
+    "pages/contract/list",
+    "pages/contract/detail",
+    "pages/service/tickets",
+    "pages/service/repair",
+    "pages/service/detail",
+    "pages/profile/index",
+    "pages/agreement/agreement"
+  ],
+  "window": {
+    "navigationBarTitleText": "鑫火锅炉",
+    "navigationBarBackgroundColor": "#0f172a",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f3f5f8",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#7b8798",
+    "selectedColor": "#d9633b",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      { "pagePath": "pages/index/index", "text": "首页", "iconPath": "assets/icons/home.png", "selectedIconPath": "assets/icons/home-active.png" },
+      { "pagePath": "pages/demand/list", "text": "需求", "iconPath": "assets/icons/demand.png", "selectedIconPath": "assets/icons/demand-active.png" },
+      { "pagePath": "pages/service/tickets", "text": "售后", "iconPath": "assets/icons/service.png", "selectedIconPath": "assets/icons/service-active.png" },
+      { "pagePath": "pages/profile/index", "text": "我的", "iconPath": "assets/icons/user.png", "selectedIconPath": "assets/icons/user-active.png" }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

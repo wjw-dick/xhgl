@@ -1,0 +1,29 @@
+<view class="container">
+  <view class="register-head">
+    <view class="register-title">注册用户</view>
+    <view class="register-sub">注册成功后自动登录，可查看需求、方案、报价、合同与售后进度。</view>
+  </view>
+  <view class="card">
+    <view class="field"><view class="label">企业 / 单位名称（选填）</view><input value="{{form.companyName}}" data-key="companyName" bindinput="onInput" maxlength="100" placeholder="选填，如：哈尔滨某某食品有限公司" /></view>
+    <view class="form-row">
+      <view class="field"><view class="label">所属行业</view><input value="{{form.industry}}" data-key="industry" bindinput="onInput" maxlength="64" placeholder="如：食品加工" /></view>
+      <view class="field"><view class="label">地区</view><input value="{{form.region}}" data-key="region" bindinput="onInput" maxlength="64" placeholder="如：黑龙江哈尔滨" /></view>
+    </view>
+    <view class="form-row">
+      <view class="field"><view class="label">联系人</view><input value="{{form.contactName}}" data-key="contactName" bindinput="onInput" maxlength="32" placeholder="联系人姓名" /></view>
+      <view class="field"><view class="label">手机号</view><input value="{{form.phone}}" data-key="phone" bindinput="onInput" type="number" maxlength="11" placeholder="11 位手机号" /></view>
+    </view>
+    <view class="form-row">
+      <view class="field"><view class="label">登录账号</view><input value="{{form.username}}" data-key="username" bindinput="onInput" maxlength="32" placeholder="字母/数字/下划线" /></view>
+      <view class="field"><view class="label">邮箱（选填）</view><input value="{{form.email}}" data-key="email" bindinput="onInput" maxlength="120" placeholder="用于接收通知" /></view>
+    </view>
+    <view class="form-row">
+      <view class="field"><view class="label">密码</view><input value="{{form.password}}" data-key="password" bindinput="onInput" password maxlength="64" placeholder="至少 8 位，含字母和数字" /></view>
+      <view class="field"><view class="label">确认密码</view><input value="{{confirmPassword}}" bindinput="onConfirmInput" password maxlength="64" placeholder="再次输入密码" /></view>
+    </view>
+    <view wx:if="{{error}}" class="error-text">{{error}}</view>
+    <view class="notice blue">注册即建立本企业客户档案；手机号用于客户身份识别，请谨慎填写。</view>
+    <button class="btn btn-primary btn-block" loading="{{loading}}" bindtap="submit">注册并登录</button>
+    <view class="login-link" bindtap="goLogin">已有账号，返回登录</view>
+  </view>
+</view>

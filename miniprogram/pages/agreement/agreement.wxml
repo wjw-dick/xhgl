@@ -1,0 +1,16 @@
+<view class="container">
+  <view class="card">
+    <view style="font-size:19rpx;letter-spacing:3rpx;color:#d9633b">TERMS &amp; PRIVACY</view>
+    <view style="font-size:38rpx;font-weight:700;margin:14rpx 0 20rpx">用户协议与隐私政策</view>
+    <view class="h">一、账号与访问</view>
+    <view class="p">客户仅可查看本人/本企业需求、方案、报价、合同、回款与售后数据，越权访问将被拦截并记录审计。</view>
+    <view class="h">二、业务效力</view>
+    <view class="p">在线方案确认、报价确认与合同签署作为业务电子记录，最终以双方盖章合同、付款凭证与法定检验结论为准。</view>
+    <view class="h">三、隐私保护</view>
+    <view class="p">手机号等敏感字段加密存储、页面脱敏；微信 OpenID/UnionID 仅在授权后用于账号互通与业务通知，不向无关第三方出售。</view>
+    <view class="h">四、特种设备合规</view>
+    <view class="p">锅炉制造、安装、改造、修理与定期检验须遵守《特种设备安全法》、TSG 11、TSG 07。缺少制造许可/监检/能效报告的产品不得推荐成交。</view>
+    <view class="h">五、联系</view>
+    <view class="p">隐私与账号问题请联系客服热线 400-800-6688。</view>
+  </view>
+</view>

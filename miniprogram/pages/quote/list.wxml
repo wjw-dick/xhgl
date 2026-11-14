@@ -1,0 +1,13 @@
+<view class="container">
+  <view wx:if="{{rows.length}}" class="card" style="padding:0 28rpx">
+    <view wx:for="{{rows}}" wx:key="id" class="list-row" data-id="{{item.id}}" bindtap="open">
+      <view class="main">
+        <view class="name mono">{{item.quoteNo}}</view>
+        <view class="desc">{{item.productName}} · v{{item.version}} · 有效期 {{item.validDate}}</view>
+        <view class="name" style="color:#d9633b;margin-top:4rpx">{{item.amountText}}</view>
+      </view>
+      <view class="pill {{item.pill}}">{{item.statusLabel}}</view>
+    </view>
+  </view>
+  <view wx:else class="empty"><view class="big">¥</view>暂无报价</view>
+</view>

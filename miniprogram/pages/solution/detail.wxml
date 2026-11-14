@@ -1,0 +1,9 @@
+<view class="container" wx:if="{{solution}}">
+  <view class="card">
+    <view class="card-title"><view class="title">{{solution.name}}</view><view class="pill {{pill}}">{{statusLabel}}</view></view>
+    <view class="muted mono" style="margin-bottom:16rpx">{{solution.solutionNo}} · 版本 {{solution.version}} · {{solution.productName}}</view>
+    <rich-text nodes="{{content}}"></rich-text>
+  </view>
+  <button wx:if="{{solution.status !== 'CONFIRMED'}}" class="btn btn-primary btn-block" bindtap="confirm">确认采用本方案</button>
+  <view wx:else class="notice blue">方案已确认，业务人员将与您联系报价。</view>
+</view>

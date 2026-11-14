@@ -1,0 +1,23 @@
+<view class="container" wx:if="{{detail}}">
+  <view class="card">
+    <view class="card-title"><view class="title mono">{{detail.ticket.ticketNo}}</view><view class="pill {{pill}}">{{statusLabel}}</view></view>
+    <view class="kv"><text>类型</text><text>{{typeLabel}}</text></view>
+    <view class="kv"><text>设备</text><text>{{detail.ticket.equipmentNo || '—'}}</text></view>
+    <view class="kv"><text>技师</text><text>{{detail.ticket.technicianName || '待派单'}}</text></view>
+    <view class="kv"><text>优先级</text><text>{{detail.ticket.priority}}</text></view>
+    <view class="kv"><text>故障描述</text><text>{{detail.ticket.description}}</text></view>
+  </view>
+  <view class="card">
+    <view class="card-title"><view class="title">处理记录</view></view>
+    <view wx:for="{{records}}" wx:key="id" class="timeline-row"><text class="time">{{item.timeText}}</text><text>{{item.content}}</text></view>
+    <view wx:if="{{!records.length}}" class="empty">暂无处理记录</view>
+  </view>
+  <view wx:if="{{canReview}}" class="card">
+    <view class="card-title"><view class="title">服务满意度</view></view>
+    <view class="stars">
+      <text wx:for="{{stars}}" wx:key="*this" class="{{score >= item ? 'active' : ''}}" data-score="{{item}}" bindtap="selectScore">★</text>
+    </view>
+    <textarea value="{{reviewComment}}" bindinput="onReviewInput" placeholder="对本次服务的评价" />
+    <button class="btn btn-primary btn-block" style="margin-top:16rpx" bindtap="submitReview">提交评价</button>
+  </view>
+</view>

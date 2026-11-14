@@ -1,0 +1,11 @@
+.idea/
+.vscode/
+node_modules/
+dist/
+target/
+uploads/
+.local/
+*.log
+.env
+.DS_Store
+.screenshots/

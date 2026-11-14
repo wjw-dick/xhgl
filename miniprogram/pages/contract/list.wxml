@@ -1,0 +1,13 @@
+<view class="container">
+  <view wx:if="{{rows.length}}" class="card" style="padding:0 28rpx">
+    <view wx:for="{{rows}}" wx:key="id" class="list-row" data-id="{{item.id}}" bindtap="open">
+      <view class="main">
+        <view class="name mono">{{item.contractNo}}</view>
+        <view class="desc">{{item.title}}</view>
+        <view class="desc">{{item.amountText}} · 签署 {{item.signLabel}}</view>
+      </view>
+      <view class="pill {{item.pill}}">{{item.statusLabel}}</view>
+    </view>
+  </view>
+  <view wx:else class="empty"><view class="big">文</view>暂无合同</view>
+</view>

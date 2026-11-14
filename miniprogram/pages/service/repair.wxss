@@ -1,0 +1,7 @@
+.photo-grid { display: flex; flex-wrap: wrap; gap: 14rpx; }
+.photo-item { position: relative; width: 150rpx; height: 150rpx; }
+.photo-item image { width: 100%; height: 100%; border-radius: 12rpx; border: 1rpx solid #e4e7ec; }
+.photo-del { position: absolute; top: -10rpx; right: -10rpx; width: 36rpx; height: 36rpx; line-height: 34rpx; text-align: center; border-radius: 50%; background: rgba(16, 24, 40, .72); color: #fff; font-size: 26rpx; }
+.photo-add { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 150rpx; height: 150rpx; border: 1rpx dashed #d0d5dd; border-radius: 12rpx; background: #fafbfc; color: #667085; }
+.photo-add-plus { font-size: 40rpx; line-height: 1; }
+.photo-add-label { font-size: 20rpx; margin-top: 8rpx; }

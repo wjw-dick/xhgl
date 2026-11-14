@@ -1,0 +1,16 @@
+<view class="login-page">
+  <view class="login-hero">
+    <view class="brand"><view class="mark">鑫</view><view><view class="brand-name">鑫火锅炉</view><view class="brand-sub">移动客户服务</view></view></view>
+    <view class="hero-title">锅炉业务\n随身服务</view>
+    <view class="hero-sub">需求、方案、报价、合同与售后进度，一部手机完成。</view>
+    <view class="flow"><text>需求</text><text>→</text><text>方案</text><text>→</text><text>报价</text><text>→</text><text>售后</text></view>
+  </view>
+  <view class="login-card">
+    <view class="field"><view class="label">账号</view><input value="{{form.username}}" data-key="username" bindinput="onInput" placeholder="请输入账号" /></view>
+    <view class="field"><view class="label">密码</view><input value="{{form.password}}" data-key="password" bindinput="onInput" password placeholder="请输入密码" /></view>
+    <button class="btn btn-primary btn-block login-btn" loading="{{loading}}" bindtap="login">登录</button>
+    <button class="wechat-btn" bindtap="wechatLogin">微信授权登录（UnionID 互通）</button>
+    <view class="register-link" bindtap="goRegister">还没有账号？立即注册</view>
+    <view class="tip">登录即同意《用户协议》与《隐私政策》。敏感字段加密，操作留审计。</view>
+  </view>
+</view>

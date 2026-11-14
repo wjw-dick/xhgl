@@ -1,0 +1,18 @@
+<view class="container">
+  <view class="top-actions"><button class="btn btn-primary btn-sm" bindtap="goForm">＋ 提交需求</button></view>
+  <scroll-view scroll-x class="chips">
+    <view wx:for="{{filters}}" wx:key="value" class="chip {{status === item.value ? 'active' : ''}}" data-value="{{item.value}}" bindtap="selectStatus">{{item.label}}</view>
+  </scroll-view>
+  <view wx:if="{{loading}}" class="empty">加载中…</view>
+  <view wx:elif="{{rows.length}}" class="card" style="padding:0 28rpx">
+    <view wx:for="{{rows}}" wx:key="id" class="list-row" data-id="{{item.id}}" bindtap="openDetail">
+      <view class="main">
+        <view class="name mono">{{item.demandNo}}</view>
+        <view class="desc">{{item.boilerTypeLabel}} · {{item.capacity}} · {{item.fuelTypeLabel}} · {{item.pressureLabel}}</view>
+        <view class="desc">{{item.region}} · 期望 {{item.expectDate}} · {{item.createdDate}}</view>
+      </view>
+      <view class="pill {{item.pill}}">{{item.statusLabel}}</view>
+    </view>
+  </view>
+  <view wx:else class="empty"><view class="big">▤</view>暂无需求\n<button class="btn btn-primary btn-sm" style="margin-top:20rpx" bindtap="goForm">立即提交</button></view>
+</view>

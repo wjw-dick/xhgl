@@ -1,0 +1,32 @@
+<view class="container">
+  <view class="hero" style="border-radius:22rpx;margin-bottom:24rpx">
+    <view class="eyebrow">PROCUREMENT REQUIREMENT</view>
+    <view class="hero-title" style="font-size:38rpx">提交采购需求</view>
+    <view class="hero-sub">2 小时内响应，工程师辅助选型并输出合规材料清单。</view>
+  </view>
+  <view class="card">
+    <view class="field"><view class="label">企业名称 *</view><input value="{{form.customerName}}" data-key="customerName" bindinput="onInput" placeholder="采购单位全称" /></view>
+    <view class="form-row">
+      <view class="field"><view class="label">联系人 *</view><input value="{{form.contactName}}" data-key="contactName" bindinput="onInput" placeholder="姓名" /></view>
+      <view class="field"><view class="label">联系电话 *</view><input value="{{form.phone}}" data-key="phone" bindinput="onInput" type="number" placeholder="手机号" /></view>
+    </view>
+    <view class="form-row">
+      <view class="field"><view class="label">锅炉类型</view><picker range="{{boilerTypes}}" range-key="label" value="{{boilerIndex}}" bindchange="onBoiler"><view>{{boilerTypes[boilerIndex].label}}</view></picker></view>
+      <view class="field"><view class="label">燃料类型</view><picker range="{{fuelTypes}}" range-key="label" value="{{fuelIndex}}" bindchange="onFuel"><view>{{fuelTypes[fuelIndex].label}}</view></picker></view>
+    </view>
+    <view class="form-row">
+      <view class="field"><view class="label">蒸发量/热功率</view><picker range="{{capacities}}" range-key="label" value="{{capacityIndex}}" bindchange="onCapacity"><view>{{capacities[capacityIndex].label}}</view></picker></view>
+      <view class="field"><view class="label">压力等级</view><picker range="{{pressures}}" range-key="label" value="{{pressureIndex}}" bindchange="onPressure"><view>{{pressures[pressureIndex].label}}</view></picker></view>
+    </view>
+    <view class="form-row">
+      <view class="field"><view class="label">预算下限（元）</view><input value="{{form.budgetMin}}" data-key="budgetMin" bindinput="onInput" type="digit" placeholder="选填" /></view>
+      <view class="field"><view class="label">预算上限（元）</view><input value="{{form.budgetMax}}" data-key="budgetMax" bindinput="onInput" type="digit" placeholder="选填" /></view>
+    </view>
+    <view class="field"><view class="label">期望地区 *</view><input value="{{form.region}}" data-key="region" bindinput="onInput" placeholder="省 / 市" /></view>
+    <view class="field"><view class="label">期望交付时间</view><picker mode="date" value="{{form.expectTime}}" bindchange="onDate"><view>{{form.expectTime || '请选择'}}</view></picker></view>
+    <view class="field"><view class="label">用途说明</view><input value="{{form.usageDesc}}" data-key="usageDesc" bindinput="onInput" placeholder="食品蒸汽/化工工艺/供暖" /></view>
+    <view class="field"><view class="label">补充说明</view><textarea value="{{form.description}}" data-key="description" bindinput="onInput" placeholder="现场条件、排放要求等" /></view>
+    <view class="notice blue">提交后自动生成需求编号；存在近期相似需求时会提示防撞单。</view>
+    <button class="btn btn-primary btn-block" loading="{{loading}}" bindtap="submit">提交需求</button>
+  </view>
+</view>

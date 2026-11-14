@@ -1,0 +1,2 @@
+.h { font-size: 27rpx; font-weight: 700; margin: 26rpx 0 10rpx; }
+.p { font-size: 23rpx; color: #3d4654; line-height: 1.9; margin: 6rpx 0; }

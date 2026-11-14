@@ -1,0 +1,66 @@
+<view class="home">
+  <view class="hero">
+    <view class="hero-top">
+      <view>
+        <view class="eyebrow">{{companyName}} · 客户服务</view>
+        <view class="hero-title">{{user.name || customer.name || '您好'}}</view>
+        <view class="hero-sub">需求、方案、报价、合同与售后进度，一站式查看。</view>
+      </view>
+      <view class="avatar" bindtap="goProfile">{{(user.name || customer.name || '客').slice(0,1)}}</view>
+    </view>
+    <view class="hero-actions">
+      <button class="btn btn-primary btn-sm" bindtap="goDemandForm">＋ 提交需求</button>
+      <button class="btn btn-light btn-sm" bindtap="goConsult">在线咨询</button>
+    </view>
+  </view>
+  <view class="container" style="margin-top:-20rpx;position:relative;z-index:2">
+    <view class="grid-4">
+      <view class="stat" bindtap="goDemands"><view class="label">需求</view><view class="value">{{overview.demandCount || 0}}</view></view>
+      <view class="stat" bindtap="goSolutions"><view class="label">方案</view><view class="value">{{overview.solutionCount || 0}}</view></view>
+      <view class="stat" bindtap="goQuotes"><view class="label">报价</view><view class="value">{{overview.quoteCount || 0}}</view></view>
+      <view class="stat" bindtap="goService"><view class="label">工单</view><view class="value">{{overview.ticketCount || 0}}</view></view>
+    </view>
+    <view class="quick-grid">
+      <view class="quick" wx:for="{{quick}}" wx:key="path" data-path="{{item.path}}" bindtap="go">
+        <view class="quick-icon">{{item.icon}}</view><view class="quick-text">{{item.title}}</view>
+      </view>
+    </view>
+
+    <block wx:if="{{overview.maintenanceWarnings.length}}">
+      <view class="card">
+        <view class="card-title"><view class="title">维保 / 定检提醒</view><view class="more" bindtap="goService">全部</view></view>
+        <view class="list-row" wx:for="{{overview.maintenanceWarnings}}" wx:key="id">
+          <view class="main"><view class="name">{{item.equipmentNo}} · {{item.projectLabel}}</view><view class="desc">到期 {{item.nextDateText}} · 周期 {{item.cycleMonths}} 个月</view></view>
+          <view class="pill yellow">{{item.remainText}}</view>
+        </view>
+      </view>
+    </block>
+
+    <view class="card">
+      <view class="card-title"><view class="title">最近需求</view><view class="more" bindtap="goDemands">全部</view></view>
+      <view class="list-row" wx:for="{{overview.recentDemands}}" wx:key="id" bindtap="goDemands">
+        <view class="main"><view class="name mono">{{item.demandNo}}</view><view class="desc">{{item.boilerTypeLabel}} · {{item.capacity}} · {{item.fuelTypeLabel}}</view></view>
+        <view class="pill {{item.pill}}">{{item.statusLabel}}</view>
+      </view>
+      <view wx:if="{{!overview.recentDemands.length}}" class="empty"><view class="big">▤</view>暂无需求，去提交第一条吧</view>
+    </view>
+
+    <view class="card">
+      <view class="card-title"><view class="title">售后工单</view><view class="more" bindtap="goService">全部</view></view>
+      <view class="list-row" wx:for="{{overview.recentTickets}}" wx:key="id" bindtap="goService">
+        <view class="main"><view class="name">{{item.ticketNo}} · {{item.typeLabel}}</view><view class="desc">{{item.description}}</view></view>
+        <view class="pill {{item.pill}}">{{item.statusLabel}}</view>
+      </view>
+      <view wx:if="{{!overview.recentTickets.length}}" class="empty"><view class="big">✚</view>暂无售后工单</view>
+    </view>
+
+    <view class="card">
+      <view class="card-title"><view class="title">公告</view></view>
+      <view class="list-row" wx:for="{{announcements}}" wx:key="id">
+        <view class="main"><view class="name">{{item.title}}</view><view class="desc">{{item.dateText}} · {{item.sourceLabel}}</view></view>
+      </view>
+      <view wx:if="{{!announcements.length}}" class="empty">暂无公告</view>
+    </view>
+    <view class="footer-tip">数据仅本人/本企业可见</view>
+  </view>
+</view>

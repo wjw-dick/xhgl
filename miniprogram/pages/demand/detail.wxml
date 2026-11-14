@@ -1,0 +1,24 @@
+<view class="container" wx:if="{{detail}}">
+  <view class="card">
+    <view class="card-title"><view class="title mono">{{detail.demand.demandNo}}</view><view class="pill {{pill}}">{{statusLabel}}</view></view>
+    <view class="kv"><text>锅炉类型</text><text>{{boilerLabel}}</text></view>
+    <view class="kv"><text>燃料类型</text><text>{{fuelLabel}}</text></view>
+    <view class="kv"><text>蒸发量/热功率</text><text>{{detail.demand.capacity}}</text></view>
+    <view class="kv"><text>压力等级</text><text>{{pressureLabel}}</text></view>
+    <view class="kv"><text>预算</text><text>{{budgetText}}</text></view>
+    <view class="kv"><text>期望地区</text><text>{{detail.demand.region || '—'}}</text></view>
+    <view class="kv"><text>期望时间</text><text>{{expectDate}}</text></view>
+    <view class="kv"><text>用途</text><text>{{detail.demand.usageDesc || '—'}}</text></view>
+  </view>
+  <view class="card">
+    <view class="card-title"><view class="title">跟进动态</view></view>
+    <view wx:for="{{follows}}" wx:key="id" class="timeline-row"><text class="time">{{item.timeText}}</text><text>{{item.content}}</text></view>
+    <view wx:if="{{!follows.length}}" class="empty">暂无跟进记录</view>
+  </view>
+  <view class="card">
+    <view class="card-title"><view class="title">方案 / 报价</view></view>
+    <view wx:for="{{solutions}}" wx:key="id" class="list-row"><view class="main"><view class="name">{{item.name}}</view><view class="desc">版本 {{item.version}}</view></view><view class="pill {{item.pill}}">{{item.statusLabel}}</view></view>
+    <view wx:for="{{quotes}}" wx:key="id" class="list-row"><view class="main"><view class="name mono">{{item.quoteNo}}</view><view class="desc">{{item.amountText}}</view></view><view class="pill {{item.pill}}">{{item.statusLabel}}</view></view>
+    <view wx:if="{{!solutions.length && !quotes.length}}" class="empty">方案与报价正在准备</view>
+  </view>
+</view>

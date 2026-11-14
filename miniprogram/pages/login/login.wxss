@@ -1,0 +1,15 @@
+.login-page { min-height: 100vh; background: #f3f5f8; }
+.login-hero { background: linear-gradient(150deg, #0b1220, #1a2b44); color: #fff; padding: 100rpx 44rpx 70rpx; border-radius: 0 0 44rpx 44rpx; }
+.brand { display: flex; align-items: center; gap: 16rpx; }
+.mark { width: 64rpx; height: 64rpx; background: #d9633b; border-radius: 16rpx; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 30rpx; }
+.brand-name { font-size: 30rpx; font-weight: 700; letter-spacing: 2rpx; }
+.brand-sub { font-size: 18rpx; color: #93a3b8; letter-spacing: 2rpx; }
+.hero-title { font-size: 58rpx; line-height: 1.35; margin: 60rpx 0 20rpx; font-weight: 700; white-space: pre-line; }
+.hero-sub { font-size: 24rpx; color: #9fadc0; line-height: 1.8; }
+.flow { display: flex; gap: 10rpx; margin-top: 30rpx; font-size: 20rpx; color: #b7c3d3; flex-wrap: wrap; }
+.flow text { border: 1rpx solid rgba(255,255,255,.18); border-radius: 999rpx; padding: 4rpx 12rpx; }
+.login-card { margin: -30rpx 28rpx 40rpx; background: #fff; border-radius: 26rpx; padding: 34rpx; box-shadow: 0 20rpx 60rpx rgba(16,24,40,.14); position: relative; z-index: 2; }
+.login-btn { margin-top: 8rpx; }
+.wechat-btn { width: 100%; margin-top: 18rpx; background: transparent; border: 1rpx solid #d5e2d9; color: #17663e; border-radius: 14rpx; padding: 18rpx; font-size: 24rpx; }
+.register-link { text-align: center; color: #d9633b; font-size: 22rpx; padding: 22rpx 0 6rpx; }
+.tip { text-align: center; color: #98a2b3; font-size: 18rpx; line-height: 1.7; }

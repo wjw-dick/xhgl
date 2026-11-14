@@ -1,0 +1,5 @@
+.kv { display: flex; justify-content: space-between; padding: 13rpx 0; border-bottom: 1rpx dashed #e4e7ec; font-size: 23rpx; }
+.kv text:first-child { color: #667085; }
+.kv text:last-child { max-width: 62%; text-align: right; }
+.kv .price { color: #d9633b; font-size: 32rpx; font-weight: 700; }
+.footer-tip { text-align: center; color: #98a2b3; font-size: 19rpx; padding: 20rpx; }

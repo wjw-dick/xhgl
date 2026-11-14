@@ -1,0 +1,16 @@
+<view class="container">
+  <view wx:if="{{rows.length}}" class="card" style="padding:0 28rpx">
+    <view wx:for="{{rows}}" wx:key="id" class="list-row">
+      <view class="main" data-id="{{item.id}}" bindtap="open">
+        <view class="name">{{item.name}}</view>
+        <view class="desc">{{item.solutionNo}} · {{item.productName}} · v{{item.version}}</view>
+        <view class="desc">浏览 {{item.viewCount}} · {{item.confirmTimeText}}</view>
+      </view>
+      <view class="actions">
+        <view class="pill {{item.pill}}">{{item.statusLabel}}</view>
+        <button wx:if="{{item.status !== 'CONFIRMED'}}" class="btn btn-primary btn-sm" data-id="{{item.id}}" bindtap="confirm">确认</button>
+      </view>
+    </view>
+  </view>
+  <view wx:else class="empty"><view class="big">方</view>暂无方案</view>
+</view>

@@ -1,0 +1,21 @@
+<view class="container">
+  <view class="card">
+    <view class="form-row">
+      <view class="field"><view class="label">联系人</view><input value="{{form.contactName}}" data-key="contactName" bindinput="onInput" /></view>
+      <view class="field"><view class="label">电话</view><input value="{{form.phone}}" data-key="phone" bindinput="onInput" type="number" /></view>
+    </view>
+    <view class="field"><view class="label">咨询内容 *</view><textarea value="{{form.question}}" data-key="question" bindinput="onInput" placeholder="锅炉用途、蒸汽用量、燃料、期望时间" /></view>
+    <button class="btn btn-primary btn-block" loading="{{loading}}" bindtap="submit">发送咨询</button>
+  </view>
+  <view wx:if="{{result}}" class="card" style="background:#f6fbf8;border-color:#cfe3d7">
+    <view class="card-title"><view class="title">{{result.autoAnswered ? 'FAQ 即时回复' : '已转人工顾问'}}</view><view class="pill {{result.autoAnswered ? 'green' : 'yellow'}}">{{result.autoAnswered ? '已答复' : '待回复'}}</view></view>
+    <view style="font-size:25rpx;line-height:1.8;color:#234d38">{{result.answer}}</view>
+  </view>
+  <view class="card">
+    <view class="card-title"><view class="title">常见问题</view></view>
+    <view wx:for="{{faqs}}" wx:key="id" class="faq" data-q="{{item.question}}" bindtap="selectFaq">
+      <view class="name">{{item.question}}</view><view class="desc">{{item.answer}}</view>
+    </view>
+    <view wx:if="{{!faqs.length}}" class="empty">FAQ 加载中</view>
+  </view>
+</view>

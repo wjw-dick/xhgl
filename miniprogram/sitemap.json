@@ -1,0 +1,4 @@
+{
+  "desc": "鑫火锅炉小程序页面索引配置",
+  "rules": [{ "action": "allow", "page": "/pages/index/index" }, { "action": "allow", "page": "/pages/demand/form" }, { "action": "allow", "page": "/pages/solution/list" }, { "action": "allow", "page": "/pages/quote/list" }]
+}

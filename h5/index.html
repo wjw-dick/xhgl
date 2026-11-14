@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>鑫火锅炉兼容入口</title>
+  <style>
+    body { margin: 0; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; background: #0f172a; color: #e8edf4; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+    .wrap { max-width: 760px; padding: 40px 24px; }
+    .kicker { font-size: 11px; letter-spacing: 3px; color: #e28a63; }
+    h1 { font-size: 36px; margin: 16px 0 10px; }
+    p { color: #9fadc0; line-height: 1.9; font-size: 14px; }
+    .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+    a { border: 1px solid rgba(255,255,255,.2); color: #fff; padding: 11px 18px; border-radius: 4px; text-decoration: none; font-size: 13px; }
+    a.primary { background: #d9633b; border-color: #d9633b; }
+    .note { margin-top: 28px; border-left: 3px solid #d9633b; padding-left: 14px; color: #8495ad; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="kicker">COMPATIBILITY ENTRY</div>
+    <h1>鑫火锅炉 · 兼容版 H5 入口</h1>
+    <p>原静态 H5 多页入口保留用于旧链接兼容。新版门户、客户中心、资质核验与分享查询已迁移至 Vue3 <code>portal-web</code>，移动端迁移至 <code>mp-h5</code>。</p>
+    <div class="links">
+      <a class="primary" href="../portal-web/">进入公开门户</a>
+      <a href="../portal-web/#/products">产品中心</a>
+      <a href="../portal-web/#/demand">提交需求</a>
+      <a href="../portal-web/#/verify">资质核验</a>
+      <a href="../portal-web/#/account">客户中心</a>
+      <a href="../mp-h5/">移动 H5</a>
+    </div>
+    <div class="note">如部署使用 Nginx History 路由，请将门户/移动 H5 地址改为对应域名；旧链接 301 跳转到新门户更利于 SEO。</div>
+  </div>
+</body>
+</html>
